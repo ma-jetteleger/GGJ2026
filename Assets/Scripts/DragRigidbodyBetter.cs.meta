@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: f517ccbe83f9e8949a7efe1f2b964fe9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 186104
+  packageName: Drag Ragdoll Rigidbody + Fly Camera
+  packageVersion: 1.0
+  assetPath: Assets/DevLocker/PhysicsUtils/DragRigidbodyBetter.cs
+  uploadId: 426579
