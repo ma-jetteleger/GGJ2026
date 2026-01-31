@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b6ecacd908494c148823d2c03a03863c
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 186104
+  packageName: Drag Ragdoll Rigidbody + Fly Camera
+  packageVersion: 1.0
+  assetPath: Assets/DevLocker/_Examples/Robot Kyle/Model/Robot Kyle-Ragdolled.prefab
+  uploadId: 426579
