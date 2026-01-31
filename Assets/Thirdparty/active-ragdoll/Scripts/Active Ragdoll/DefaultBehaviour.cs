@@ -13,6 +13,7 @@ public class DefaultBehaviour : MonoBehaviour {
     [SerializeField] private AnimationModule _animationModule;
     [SerializeField] private GripModule _gripModule;
     [SerializeField] private CameraModule _cameraModule;
+    [SerializeField] private HarpoonTrigger _harpoonTrigger;
 
     [Header("Movement")]
     [SerializeField] private bool _enableMovement = true;
@@ -26,6 +27,7 @@ public class DefaultBehaviour : MonoBehaviour {
         if (_animationModule == null) _animationModule = GetComponent<AnimationModule>();
         if (_gripModule == null) _gripModule = GetComponent<GripModule>();
         if (_cameraModule == null) _cameraModule = GetComponent<CameraModule>();
+        if (_harpoonTrigger == null) _harpoonTrigger = GetComponentInChildren<HarpoonTrigger>();
     }
 
     private void Start() {
@@ -42,6 +44,12 @@ public class DefaultBehaviour : MonoBehaviour {
         _activeRagdoll.Input.OnLeftArmDelegates += _gripModule.UseLeftGrip;
         _activeRagdoll.Input.OnRightArmDelegates += _animationModule.UseRightArm;
         _activeRagdoll.Input.OnRightArmDelegates += _gripModule.UseRightGrip;
+
+        if (_harpoonTrigger != null)
+        {
+            _harpoonTrigger.Pinned += OnHarpoonPinned;
+            _harpoonTrigger.Unpinned += OnHarpoonUnpinned;
+        }
     }
 
     private void Update() {
@@ -93,5 +101,19 @@ public class DefaultBehaviour : MonoBehaviour {
     /// <summary> Make the player move and rotate </summary>
     private void MovementInput(Vector2 movement) {
         _movement = movement;
+    }
+
+    private void OnHarpoonPinned()
+    {
+        _enableMovement = true;
+        _physicsModule.SetBalanceMode(PhysicsModule.BALANCE_MODE.STABILIZER_JOINT);
+    }
+
+    private void OnHarpoonUnpinned()
+    {
+        if (_activeRagdoll == null || _activeRagdoll.Input == null)
+            return;
+
+        ProcessFloorChanged(_activeRagdoll.Input.IsOnFloor);
     }
 }
