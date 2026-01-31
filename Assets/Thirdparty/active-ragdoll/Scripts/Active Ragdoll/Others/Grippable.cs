@@ -7,5 +7,7 @@ namespace ActiveRagdoll {
 
     public class Grippable : MonoBehaviour {
         public JointMotionsConfig jointMotionsConfig;
+
+        public bool Gripped { get; set; }
     }
 } // namespace ActiveRagdoll
