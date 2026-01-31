@@ -17,6 +17,7 @@ public class DefaultBehaviour : MonoBehaviour {
 
     [Header("Movement")]
     [SerializeField] private bool _enableMovement = true;
+    [SerializeField] private float _animationSpeedMultiplier = 1f;
     private Vector2 _movement;
 
     private Vector3 _aimDirection;
@@ -72,7 +73,8 @@ public class DefaultBehaviour : MonoBehaviour {
         }
 
         _animationModule.Animator.SetBool("moving", true);
-        _animationModule.Animator.SetFloat("speed", _movement.magnitude);        
+        float speed = _movement.magnitude * _animationSpeedMultiplier;
+        _animationModule.Animator.SetFloat("speed", speed);
 
         float angleOffset = Vector2.SignedAngle(_movement, Vector2.up);
         Vector3 targetForward = Quaternion.AngleAxis(angleOffset, Vector3.up) * Auxiliary.GetFloorProjection(_aimDirection);
