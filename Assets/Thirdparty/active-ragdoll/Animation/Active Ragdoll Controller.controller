@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1102 &-4957002080827014574
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -21,8 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -5294006321987392172, guid: 0e9a428405a52cf43b95ab206dd3babd,
-    type: 3}
+  m_Motion: {fileID: -5294006321987392172, guid: 0e9a428405a52cf43b95ab206dd3babd, type: 3}
   m_Tag: 
   m_SpeedParameter: speed
   m_MirrorParameter: 
@@ -30,7 +29,7 @@ AnimatorState:
   m_TimeParameter: 
 --- !u!1107 &-3112462024768731263
 AnimatorStateMachine:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -115,7 +114,7 @@ AnimatorStateTransition:
   m_CanTransitionToSelf: 1
 --- !u!1102 &2145162604880389019
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -133,8 +132,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -4410110138628448019, guid: 0e9a428405a52cf43b95ab206dd3babd,
-    type: 3}
+  m_Motion: {fileID: -4410110138628448019, guid: 0e9a428405a52cf43b95ab206dd3babd, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -167,7 +165,7 @@ AnimatorStateTransition:
   m_CanTransitionToSelf: 1
 --- !u!1102 &5649052701640479551
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -185,8 +183,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -3730843190915106339, guid: 0e9a428405a52cf43b95ab206dd3babd,
-    type: 3}
+  m_Motion: {fileID: -3730843190915106339, guid: 0e9a428405a52cf43b95ab206dd3babd, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

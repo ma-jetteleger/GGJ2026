@@ -380,6 +380,7 @@ MonoBehaviour:
   _cameraModule: {fileID: 748712420273051455}
   _harpoonTrigger: {fileID: 1190853467089448886}
   _enableMovement: 1
+  _animationSpeedMultiplier: 3
 --- !u!1 &8864341769938712016
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +622,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HarpoonTrigger
   _autoPin: 1
-  _allowSelfPin: 0
   _breakForce: Infinity
   _breakTorque: Infinity
   _tetherDistance: 0.5

@@ -13,7 +13,7 @@ public class DefaultBehaviour : MonoBehaviour {
     [SerializeField] private AnimationModule _animationModule;
     [SerializeField] private GripModule _gripModule;
     [SerializeField] private CameraModule _cameraModule;
-    [SerializeField] private HarpoonTrigger _harpoonTrigger;
+    [SerializeField] private AttachGrippables attachGrippables;
 
     [Header("Movement")]
     [SerializeField] private bool _enableMovement = true;
@@ -28,7 +28,7 @@ public class DefaultBehaviour : MonoBehaviour {
         if (_animationModule == null) _animationModule = GetComponent<AnimationModule>();
         if (_gripModule == null) _gripModule = GetComponent<GripModule>();
         if (_cameraModule == null) _cameraModule = GetComponent<CameraModule>();
-        if (_harpoonTrigger == null) _harpoonTrigger = GetComponentInChildren<HarpoonTrigger>();
+        if (attachGrippables == null) attachGrippables = GetComponentInChildren<AttachGrippables>();
     }
 
     private void Start() {
@@ -46,10 +46,10 @@ public class DefaultBehaviour : MonoBehaviour {
         _activeRagdoll.Input.OnRightArmDelegates += _animationModule.UseRightArm;
         _activeRagdoll.Input.OnRightArmDelegates += _gripModule.UseRightGrip;
 
-        if (_harpoonTrigger != null)
+        if (attachGrippables != null)
         {
-            _harpoonTrigger.Pinned += OnHarpoonPinned;
-            _harpoonTrigger.Unpinned += OnHarpoonUnpinned;
+            attachGrippables.OnAttach += OnHarpoonPinned;
+            attachGrippables.OnDetach += OnHarpoonOnDetach;
         }
     }
 
@@ -111,7 +111,7 @@ public class DefaultBehaviour : MonoBehaviour {
         _physicsModule.SetBalanceMode(PhysicsModule.BALANCE_MODE.STABILIZER_JOINT);
     }
 
-    private void OnHarpoonUnpinned()
+    private void OnHarpoonOnDetach()
     {
         if (_activeRagdoll == null || _activeRagdoll.Input == null)
             return;
