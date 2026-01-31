@@ -1,4 +1,6 @@
+using ActiveRagdoll;
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HarpoonTrigger : MonoBehaviour
@@ -81,15 +83,35 @@ public class HarpoonTrigger : MonoBehaviour
         if (targetBody == _pinSourceBody)
             return;
 
-        if (targetBody != null && !targetBody.isKinematic)
-            return;
+        var targetGrippable = targetBody?.GetComponent<Grippable>();
 
-        _connectedBody = targetBody != null ? targetBody : CreateWorldAnchor(worldPoint);
+        if(targetGrippable == null || targetGrippable.Gripped)
+        {
+			return;
+		}
 
-        _joint = _tetherDistance > 0f
+		if (targetBody != null && !targetBody.isKinematic)
+        {
+			_connectedBody = /*targetBody != null ? */targetBody/* : CreateWorldAnchor(worldPoint)*/;
+
+			_connectedBody.transform.SetParent(transform);
+			_connectedBody.useGravity = false;
+			_connectedBody.isKinematic = true;
+			_connectedBody.transform.position = _connectedBody.transform.position - (_connectedBody.transform.position - transform.position).normalized * 0.1f;
+
+			targetGrippable.Gripped = true;
+
+			targetBody.AddComponent<HarpoonTrigger>();
+		}
+
+        //_connectedBody = targetBody != null ? targetBody : CreateWorldAnchor(worldPoint);
+
+        /*_joint = _tetherDistance > 0f
             ? CreateTetherJoint(_pinSourceBody, _connectedBody, worldPoint)
-            : CreateFixedJoint(_pinSourceBody, _connectedBody, worldPoint);
-        Debug.Log("Harpoon pinned.", this);
+            : CreateFixedJoint(_pinSourceBody, _connectedBody, worldPoint);*/
+
+		Debug.Log("Harpoon pinned.", this);
+
         Pinned?.Invoke();
     }
 
