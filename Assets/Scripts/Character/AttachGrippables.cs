@@ -9,7 +9,7 @@ public class AttachGrippables : MonoBehaviour
     public event Action OnAttach;
     public event Action OnDetach;
 
-    private List<AttachGrippables> _attachedGrippables;
+    private List<AttachGrippables> _attachedGrippables = new List<AttachGrippables>();
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -43,7 +43,6 @@ public class AttachGrippables : MonoBehaviour
             Collider targetCollider = targetRigidbody.GetComponent<Collider>();
             if (targetCollider != null)
             {
-                // component.isTrigger = true;
                 targetCollider.gameObject.layer = LayerMask.NameToLayer("GrippedGrippables");
             }
 
