@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 564d13a0e49acf749a1720ba02782933
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 186104
+  packageName: Drag Ragdoll Rigidbody + Fly Camera
+  packageVersion: 1.0
+  assetPath: Assets/DevLocker/_Examples/Physics/Ground.mat
+  uploadId: 426579
