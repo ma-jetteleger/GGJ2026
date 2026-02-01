@@ -9,12 +9,21 @@ public class Cart : MonoBehaviour
     [SerializeField] private GameObject celebrationVfx;
     [SerializeField] private Vector3 celebrationOffset = new Vector3(0f, 1f, 0f);
     [SerializeField] private int targetScore = 1;
+    [SerializeField] private float indicatorHoverAmplitude = 0.15f;
+    [SerializeField] private float indicatorHoverSpeed = 1f;
 
     private GameObject requiredPrefab;
     private GameObject currentIndicator;
+    private Vector3 indicatorBaseLocalPosition;
     private int scoreCounter;
 
-    public void PickRequirement()
+    private void Start()
+    {
+        PickNewRequirement();
+        SpawnRequirement();
+    }
+
+    public void PickNewRequirement()
     {
         if (requirementPrefabs == null || requirementPrefabs.Count == 0)
         {
@@ -29,7 +38,7 @@ public class Cart : MonoBehaviour
     {
         if (requiredPrefab == null)
         {
-            PickRequirement();
+            PickNewRequirement();
         }
 
         if (requiredPrefab == null || targetTransform == null)
@@ -45,6 +54,7 @@ public class Cart : MonoBehaviour
         currentIndicator = Instantiate(requiredPrefab, targetTransform);
         currentIndicator.transform.localPosition = Vector3.zero;
         currentIndicator.transform.localRotation = Quaternion.identity;
+        indicatorBaseLocalPosition = currentIndicator.transform.localPosition;
         RemovePhysicsComponents(currentIndicator);
     }
 
@@ -74,7 +84,7 @@ public class Cart : MonoBehaviour
         scoreCounter++;
         if (scoreCounter < targetScore)
         {
-            PickRequirement();
+            PickNewRequirement();
             SpawnRequirement();
         }
     }
@@ -90,6 +100,17 @@ public class Cart : MonoBehaviour
         var prefabName = prefab.name;
         return string.Equals(detectedName, prefabName, StringComparison.Ordinal)
             || string.Equals(detectedName, prefabName + "(Clone)", StringComparison.Ordinal);
+    }
+
+    private void Update()
+    {
+        if (currentIndicator == null)
+        {
+            return;
+        }
+
+        var offsetY = Mathf.Sin(Time.time * indicatorHoverSpeed) * indicatorHoverAmplitude;
+        currentIndicator.transform.localPosition = indicatorBaseLocalPosition + new Vector3(0f, offsetY, 0f);
     }
 
     private static void RemovePhysicsComponents(GameObject indicator)
