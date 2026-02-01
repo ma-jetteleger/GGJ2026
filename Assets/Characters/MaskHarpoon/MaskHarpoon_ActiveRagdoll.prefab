@@ -265,7 +265,7 @@ MonoBehaviour:
   _lookPoint: {fileID: 5061943608461459052}
   lookSensitivity: 1
   scrollSensitivity: 1
-  invertY: 0
+  invertY: 1
   invertX: 0
   smoothSpeed: 5
   smooth: 1
@@ -396,10 +396,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LookWiggleDetector
   playerInput: {fileID: 0}
   lookActionName: Look
-  minInputMagnitude: 0.7
-  directionChangeThresholdDegrees: 90
-  stillTimeoutSeconds: 0.5
-  requiredMovingSeconds: 1
+  mouseSettings:
+    minInputMagnitude: 0
+    directionChangeThresholdDegrees: 0
+    stillTimeoutSeconds: 0
+    requiredMovingSeconds: 0
+  controllerSettings:
+    minInputMagnitude: 0
+    directionChangeThresholdDegrees: 0
+    stillTimeoutSeconds: 0
+    requiredMovingSeconds: 0
   debugLogging: 0
   debugGui: 0
   debugGuiRect:
