@@ -1,0 +1,379 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2f383f43f5cc4371aa575da4ca335e3, type: 3}
+  m_Name: PrefabLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::PrefabLibrary
+  Entries:
+  - PrettyName: Apple
+    Prefab: {fileID: 5559681866723065342, guid: bb1bdd5d92099ea4ab034540184adb32, type: 3}
+  - PrettyName: Green Apple
+    Prefab: {fileID: 4120337047901312101, guid: 9f759d0f2f1395743a07b446ff5e51c8, type: 3}
+  - PrettyName: Aubergine
+    Prefab: {fileID: 5541679807341974940, guid: 5d66c61753a655c4ba7d1109765da6d1, type: 3}
+  - PrettyName: Avocado (Full)
+    Prefab: {fileID: 6216546451677344607, guid: 37255f6c86bf969498f4a17ad7d47eaa, type: 3}
+  - PrettyName: Avocado (Half)
+    Prefab: {fileID: 7990470798795937623, guid: 5454b8752885c06469f1d256a448a98e, type: 3}
+  - PrettyName: Bacon Tray
+    Prefab: {fileID: 5649670730759317040, guid: 864a1c3783f403248a68993dda804072, type: 3}
+  - PrettyName: Banana
+    Prefab: {fileID: 2307544116691119418, guid: ed6211beab9de8c4eb344365e16eb469, type: 3}
+  - PrettyName: Bread (Type 1)
+    Prefab: {fileID: 705080123875464295, guid: 7634d7f4d2451a445b05af8bc234317e, type: 3}
+  - PrettyName: Bread (Type 2)
+    Prefab: {fileID: 4394181134433090672, guid: 0fdd68537ab680c47968068dea1fe94d, type: 3}
+  - PrettyName: Burgers Tray
+    Prefab: {fileID: 4526901683316650054, guid: 55488d92aa82ec84789d2340a6e66eb7, type: 3}
+  - PrettyName: Carrot
+    Prefab: {fileID: 3063361208535918136, guid: d53936fb3c278c645875f09f2f5569f7, type: 3}
+  - PrettyName: Cheese
+    Prefab: {fileID: 6214565439008247914, guid: c2226625c26dde04b9c82486a4b88a8c, type: 3}
+  - PrettyName: Chicken
+    Prefab: {fileID: 8861775907526301704, guid: b6a7e3269dd0c1b49ba817b68673254b, type: 3}
+  - PrettyName: Cauliflower
+    Prefab: {fileID: 6131111300176227940, guid: 2cdd0bd35d97c5a4bbcb08136be11206, type: 3}
+  - PrettyName: Croissant
+    Prefab: {fileID: 5155128927475182016, guid: 1cf838cd0b3319b438a9cb5b337d333d, type: 3}
+  - PrettyName: Cucumber
+    Prefab: {fileID: 4750182162635256803, guid: 5153ef490773f1c4c8fa90ba0edaaaac, type: 3}
+  - PrettyName: Blue Donut
+    Prefab: {fileID: 5542976078431595891, guid: 35a8d7a438247414a939c099d60a4c09, type: 3}
+  - PrettyName: Orange Donut
+    Prefab: {fileID: 2104457140989574963, guid: 6fac12616a0bc1f4786dded6bd9b1401, type: 3}
+  - PrettyName: Pink Donut
+    Prefab: {fileID: 7409569493306810989, guid: c52b9cbe1b6a3e642b9e3b7d112b6764, type: 3}
+  - PrettyName: Red Donut
+    Prefab: {fileID: 7221973507259446007, guid: 217ab61f0fa08ed4ea17237dad944065, type: 3}
+  - PrettyName: White Donut
+    Prefab: {fileID: 2312144510067118488, guid: 4201afb498f4e724aa6f86f79b8739fc, type: 3}
+  - PrettyName: Single Egg
+    Prefab: {fileID: 1138802654624382902, guid: 63c595d4a2d238d448e037fda09bccc2, type: 3}
+  - PrettyName: Hot Dog
+    Prefab: {fileID: 1576540572559973369, guid: ab349d7add4d9b14d8e926fb68fb1ad6, type: 3}
+  - PrettyName: Kiwi
+    Prefab: {fileID: 4934728101027336172, guid: 35b128426be65b34e8ac6655085b3982, type: 3}
+  - PrettyName: Leek
+    Prefab: {fileID: 6219827631454603225, guid: 6940606989664ad48970910d84b0c7be, type: 3}
+  - PrettyName: Lemon
+    Prefab: {fileID: 2319342909546838228, guid: 845d5464fd637d4479d8c79c186ae26b, type: 3}
+  - PrettyName: Lettuce
+    Prefab: {fileID: 4513960971000923157, guid: fb129445044d99848836fb4395b07f5b, type: 3}
+  - PrettyName: Meat
+    Prefab: {fileID: 8934874688299097311, guid: 9cd779e1f7d00274ca46d0568de1c758, type: 3}
+  - PrettyName: Brown Mushroom
+    Prefab: {fileID: 4416737249686477972, guid: 59ca9973af95c6648b276369cd673de1, type: 3}
+  - PrettyName: Orange Mushroom
+    Prefab: {fileID: 706618623269715937, guid: 58c35164be6bb204683c679115f678b8, type: 3}
+  - PrettyName: White Mushroom
+    Prefab: {fileID: 4674035629237984437, guid: 14b4981af81566d49acfcf3fd521bd82, type: 3}
+  - PrettyName: Onion
+    Prefab: {fileID: 1081677236612425, guid: 49b7b2fd66a9c814c80747d86482f07a, type: 3}
+  - PrettyName: Orange
+    Prefab: {fileID: 3093152630806655293, guid: cc2f922a1b5b991459abe61fc126715f, type: 3}
+  - PrettyName: Peach
+    Prefab: {fileID: 5166159660659606685, guid: f1f56d25e6e01da4f8612a34c45816d9, type: 3}
+  - PrettyName: Pear
+    Prefab: {fileID: 4443423835092291151, guid: 2bc6abd05fd49bc4a9db8efff8320af3, type: 3}
+  - PrettyName: Pineapple
+    Prefab: {fileID: 3697096326436862626, guid: 0f997efd99763d141bc8f1ef385af457, type: 3}
+  - PrettyName: Potato
+    Prefab: {fileID: 8999341778627371338, guid: 58635b1a016d8e24998618dde7c2ae72, type: 3}
+  - PrettyName: Pumpkin
+    Prefab: {fileID: 7046406958618648424, guid: 34a713e40fdfd594c80a3d23133a5212, type: 3}
+  - PrettyName: Raspberry
+    Prefab: {fileID: 5618186892315916378, guid: 4bc056ce27cb3994b83584c6915b631e, type: 3}
+  - PrettyName: Sausages Tray
+    Prefab: {fileID: 7306221071259716391, guid: 88adc5a0625fa894a9ea357a8d9a7e65, type: 3}
+  - PrettyName: Steak
+    Prefab: {fileID: 2176735038574961686, guid: d92bb245658373d4ba35540d6df70566, type: 3}
+  - PrettyName: Strawberry
+    Prefab: {fileID: 3094551926163112430, guid: ae066a78b26f6a24eb97d6cbd3b03aa0, type: 3}
+  - PrettyName: Tomato
+    Prefab: {fileID: 6150841354796369486, guid: 164794983a181dc4580abe7ddb1bd3de, type: 3}
+  - PrettyName: Watermelon (Half)
+    Prefab: {fileID: 8152249739543439345, guid: 4c56da4c8444e46418523b254b083441, type: 3}
+  - PrettyName: Watermelon (Quart)
+    Prefab: {fileID: 1315147242720592560, guid: 4cab70a58e7fcdb449fa8c629477901c, type: 3}
+  - PrettyName: Watermelon (Slice)
+    Prefab: {fileID: 3525091645248742799, guid: 9c0905e033c11fc4eb8d7327e8e3f168, type: 3}
+  - PrettyName: Watermelon (Whole)
+    Prefab: {fileID: 2300595263582842228, guid: d728f0163c680ac4d9f19fed9fb7dbc3, type: 3}
+  - PrettyName: Bottle Cola (Type 1)
+    Prefab: {fileID: 2264861010056238367, guid: bab3e182f40be29409ce8180c1d525c4, type: 3}
+  - PrettyName: Bottle Lime (Type 1)
+    Prefab: {fileID: 5388977174134535690, guid: ed5f12108aa84584b9c48375cbc91c81, type: 3}
+  - PrettyName: Bottle Orange (Type 1)
+    Prefab: {fileID: 4243330605666179483, guid: 935ad6444eeefeb49a9d04ed1a06c04b, type: 3}
+  - PrettyName: Bottle Water (Type 1)
+    Prefab: {fileID: 8981145562737500203, guid: 2838ce194fc760340b7d7c3a04fa7773, type: 3}
+  - PrettyName: Bottle Green (Type 2)
+    Prefab: {fileID: 1504769285569009723, guid: a77921d93a402f249987feda998b311e, type: 3}
+  - PrettyName: Bottle Orange (Type 2)
+    Prefab: {fileID: 4562706876362714562, guid: 5107f73674b143e4ebfaeea34e89932d, type: 3}
+  - PrettyName: Bottle Pink (Type 2)
+    Prefab: {fileID: 1908642651670014143, guid: 4f655bf91bced6b4d97356c6585ee675, type: 3}
+  - PrettyName: Bottle Red (Type 2)
+    Prefab: {fileID: 7527478965190399584, guid: fe194c102b099fb419885d17ef7e4b66, type: 3}
+  - PrettyName: Bottle Water (Type 2)
+    Prefab: {fileID: 4402394090637669661, guid: b01e14034ece8de47b2223f6a06aa5c1, type: 3}
+  - PrettyName: Bottle Cola (Type 3)
+    Prefab: {fileID: 9179893692576086484, guid: 41d0491e24e462a47a2dfa6a82a8b398, type: 3}
+  - PrettyName: Bottle Lime (Type 3)
+    Prefab: {fileID: 1181559025518803415, guid: 364926fb6f7c932478e05ef6edce8e06, type: 3}
+  - PrettyName: Bottle Orange (Type 3)
+    Prefab: {fileID: 8625532926309195895, guid: b470d6fe048ce8946ad889d2ab36d615, type: 3}
+  - PrettyName: Bottle Water (Type 3)
+    Prefab: {fileID: 1165373545357178199, guid: 507b6d9557360f745acba82d8ad47f62, type: 3}
+  - PrettyName: Large Green Bottle
+    Prefab: {fileID: 5177391992945272824, guid: 546679cd26edd14429e303453e41ca71, type: 3}
+  - PrettyName: Large Orange Bottle
+    Prefab: {fileID: 7880974038316471812, guid: e535ee131f04e3a4185b74e56a6ec1c3, type: 3}
+  - PrettyName: Large Pink Bottle
+    Prefab: {fileID: 4361959659541401078, guid: ed864bcaa38c40546b5ed7b20f34c6c4, type: 3}
+  - PrettyName: Large Red Bottle
+    Prefab: {fileID: 5975072467596182275, guid: d165a046091e4ca4fb95bfa75454e2dc, type: 3}
+  - PrettyName: Large Water Bottle
+    Prefab: {fileID: 8643064955252066383, guid: 2ef4b6e3f7a8a9340b4a27ffef972538, type: 3}
+  - PrettyName: Flat Blue Bottle
+    Prefab: {fileID: 3676623082757806234, guid: 73c6390097d7b614692cff93c629a2fd, type: 3}
+  - PrettyName: Flat Cream Bottle
+    Prefab: {fileID: 7372109896495366167, guid: 3d3bddf377dcc704bab46bb1f3b7497b, type: 3}
+  - PrettyName: Flat Dark Blue Bottle
+    Prefab: {fileID: 4282418688101151942, guid: d649c36ab3100bf4db7c9ddb639b56d7, type: 3}
+  - PrettyName: Flat Dark Red Bottle
+    Prefab: {fileID: 2525552236226995453, guid: 4412268d0a0fce64f8949b4eebfc8296, type: 3}
+  - PrettyName: Flat Green Bottle
+    Prefab: {fileID: 8466211213175567696, guid: 41eda6086a663874ab272a3a2bb9c3f4, type: 3}
+  - PrettyName: Flat Orange Bottle
+    Prefab: {fileID: 7098377639471988000, guid: 2169bca34a5bc05489a4f23ce32cbc63, type: 3}
+  - PrettyName: Flat Pink Bottle
+    Prefab: {fileID: 5340511061470066691, guid: 03cfc194763259d489de317d378a9258, type: 3}
+  - PrettyName: Flat Red Bottle
+    Prefab: {fileID: 3740215942567946374, guid: 42ab5193f99c27f42bb3bbe42b24d827, type: 3}
+  - PrettyName: Glass Green Bottle
+    Prefab: {fileID: 4609605449194084982, guid: f7c2475308debcf47ba4f2bd696a7d68, type: 3}
+  - PrettyName: Glass Red Bottle
+    Prefab: {fileID: 7483456500142469721, guid: 041f3d9f593e2e94cbeea727cf7706a0, type: 3}
+  - PrettyName: Small Green Bottle
+    Prefab: {fileID: 8325025068126772122, guid: f33eb8ed5d4ceac4c8e9d538c21fe32f, type: 3}
+  - PrettyName: Small Orange Bottle
+    Prefab: {fileID: 7365054190391811337, guid: 4c408eec28df5a9459f46b3e999d91f3, type: 3}
+  - PrettyName: Small Pink Bottle
+    Prefab: {fileID: 3896864693873229079, guid: eadbd113f46ac034aa532c1961ae79de, type: 3}
+  - PrettyName: Small Red Bottle
+    Prefab: {fileID: 4601507726770936822, guid: 608497cdad383104d8ee13ac8dc59c4f, type: 3}
+  - PrettyName: Small Water Bottle
+    Prefab: {fileID: 4973080243075494966, guid: cb4242bd33a443c4f94e260c9940bb23, type: 3}
+  - PrettyName: Banana Yogurt
+    Prefab: {fileID: 7986167205783697021, guid: 7948a6978cb10024bab45e9dd76a819e, type: 3}
+  - PrettyName: Blueberry Yogurt
+    Prefab: {fileID: 89120028449687336, guid: 2756eb9083e2d8547817ee5636f5243e, type: 3}
+  - PrettyName: Peach Yogurt
+    Prefab: {fileID: 5110406885742285051, guid: 7286042d52552cc40b5ebafb5cf79254, type: 3}
+  - PrettyName: Strawberry Yogurt
+    Prefab: {fileID: 4684286550472887850, guid: f7b4e5d67fa57e34b974939d50f71bc3, type: 3}
+  - PrettyName: Cereal (Granola)
+    Prefab: {fileID: 3941509814583404492, guid: 897fa5235b71cee41be623d7d10f7bd7, type: 3}
+  - PrettyName: Cereal (Rings)
+    Prefab: {fileID: 461513135073091092, guid: d78cfa189c3716b46adb3752f31c934b, type: 3}
+  - PrettyName: Cookies
+    Prefab: {fileID: 5642546595845233836, guid: 9cf157d2762ee454f9b9feb85c40af14, type: 3}
+  - PrettyName: Christmas Cookies
+    Prefab: {fileID: 6344651521601116300, guid: 148ea448ddd84b54b830cdcc767ddb50, type: 3}
+  - PrettyName: Valentine Cookies
+    Prefab: {fileID: 3501944133058842622, guid: b072c065dd625a541810226e23ff9aca, type: 3}
+  - PrettyName: Blue Can
+    Prefab: {fileID: 164709669048016850, guid: 4506a0c26ac87c240b76e8a81955f750, type: 3}
+  - PrettyName: Brown Can
+    Prefab: {fileID: 1913234918530565646, guid: 84fa12948a0e3f444b4be1fc780e0c07, type: 3}
+  - PrettyName: BBQ Chips
+    Prefab: {fileID: 9149973592565830289, guid: 45818e19a8f02d945b81b8d5835e9a36, type: 3}
+  - PrettyName: Cheddar Chips
+    Prefab: {fileID: 2430653020137427753, guid: cac62aab580502c41a88b9c7c0f45722, type: 3}
+  - PrettyName: Classic Chips
+    Prefab: {fileID: 2456391900248354295, guid: ddc4ee0ce937840459e83f92538c5b8b, type: 3}
+  - PrettyName: Onion Chips
+    Prefab: {fileID: 4326229875320653763, guid: f9d2bae1df57096489d290ae3e30fda5, type: 3}
+  - PrettyName: Blue Food Can
+    Prefab: {fileID: 3980205115172407445, guid: 49844bd0649349e439bdfdce23f4e77b, type: 3}
+  - PrettyName: Brown Food Can
+    Prefab: {fileID: 376975881989539007, guid: 419053cd34934d24ea5104a793bb60c0, type: 3}
+  - PrettyName: Orange Food Can
+    Prefab: {fileID: 3099807329168847843, guid: f753a7d796c27634780520168ccd527f, type: 3}
+  - PrettyName: Red Food Can
+    Prefab: {fileID: 5593451315893803135, guid: cd48ce224bc3d8d4e8afe3d55069b600, type: 3}
+  - PrettyName: Small Blue Food Can
+    Prefab: {fileID: 3616132855241325834, guid: a6bb06ff1117a0343a78f272cfebfb2b, type: 3}
+  - PrettyName: Small Brown Food Can
+    Prefab: {fileID: 301620641469551706, guid: 8f799d7285913bc43b43f1610142358a, type: 3}
+  - PrettyName: Small Orange Food Can
+    Prefab: {fileID: 4961582670517459192, guid: 45e9163efe504dc41a883441ee575216, type: 3}
+  - PrettyName: Small Red Food Can
+    Prefab: {fileID: 3855234158880436679, guid: da0eef1515f452b488ff8cef891a17db, type: 3}
+  - PrettyName: Square Blue Food Can
+    Prefab: {fileID: 4700138773447532586, guid: 6be1efc378354444fa37c153d0b15495, type: 3}
+  - PrettyName: Square Brown Food Can
+    Prefab: {fileID: 6450426488605872886, guid: ac23830da5b230a45bf6282e121f9c71, type: 3}
+  - PrettyName: Square Orange Food Can
+    Prefab: {fileID: 8584872337866575342, guid: ea229dac2968e43488ebe2927bf42243, type: 3}
+  - PrettyName: Square Red Food Can
+    Prefab: {fileID: 7468565941125229029, guid: 5409ee77b8f06d34f808a5fe8decbc35, type: 3}
+  - PrettyName: Orange Can
+    Prefab: {fileID: 1082783627980305594, guid: 94187c4971326274a9736c33cb621dd4, type: 3}
+  - PrettyName: Red Can
+    Prefab: {fileID: 5904573744073254722, guid: a92708654e309f541a9abe89b353871e, type: 3}
+  - PrettyName: Blueberry Cereal Bar
+    Prefab: {fileID: 5320135682764681257, guid: 24077aae737557343908388742cd4dd7, type: 3}
+  - PrettyName: Strawberry Cereal Bar
+    Prefab: {fileID: 7276189038056019500, guid: 8fc2c5b65e9911449924d6ec5f55007e, type: 3}
+  - PrettyName: Chips
+    Prefab: {fileID: 8626720810856120294, guid: 6f86b5c668d06ca45b09779dcba44842, type: 3}
+  - PrettyName: Spicy Chips
+    Prefab: {fileID: 6080904023263954660, guid: e3699700daa769243b16817fbf677bad, type: 3}
+  - PrettyName: Chocolate
+    Prefab: {fileID: 1863346137262861457, guid: c6a850e233b9aa44286e889978082cf6, type: 3}
+  - PrettyName: White Chocolate
+    Prefab: {fileID: 3662429699296110029, guid: 5f3a7f64260b08945b3793c4a8358212, type: 3}
+  - PrettyName: Magenta Cleaning Bottle
+    Prefab: {fileID: 9086583656681003164, guid: 0f5ca5e4a7b33b244aef066a70f4d392, type: 3}
+  - PrettyName: Purple Cleaning Bottle
+    Prefab: {fileID: 2021187508546049474, guid: c3f0de6a6f3310641961205f24f561c5, type: 3}
+  - PrettyName: Yellow Cleaning Bottle
+    Prefab: {fileID: 6163740599046466854, guid: 619d9ceb5ac616343b218f805649d4f6, type: 3}
+  - PrettyName: Caramel Coffee
+    Prefab: {fileID: 6753754427846120235, guid: 68c3a9d2d6c745843b921c53da9c3239, type: 3}
+  - PrettyName: Latte Coffee
+    Prefab: {fileID: 5922187075060369143, guid: 6afe108b267fe994a81f9c8dbfc22669, type: 3}
+  - PrettyName: Blue Cream
+    Prefab: {fileID: 200170511694927443, guid: 4352dfd50063794439fe0bb3a448844c, type: 3}
+  - PrettyName: Orange Cream Jar
+    Prefab: {fileID: 2305258720988178922, guid: 85d808f46d4ba6a428bc4ff9107e57a0, type: 3}
+  - PrettyName: Red Cream Jar
+    Prefab: {fileID: 844572381081055284, guid: f8cfbebbf0b8a5140b0650ad246bd2e1, type: 3}
+  - PrettyName: White Cream Jar
+    Prefab: {fileID: 3875898069399807318, guid: 147fe442ae9b9364980051cd10547304, type: 3}
+  - PrettyName: Yellow Cream Jar
+    Prefab: {fileID: 7781437352980472087, guid: 655af603ba78976448c591b0cc1fb7a0, type: 3}
+  - PrettyName: Red Cream
+    Prefab: {fileID: 2727827673438003727, guid: 6236088e53618df478be363261ab754f, type: 3}
+  - PrettyName: White Cream
+    Prefab: {fileID: 6151847823052923326, guid: 1792b560b5a571d4d9312c7cdc787d08, type: 3}
+  - PrettyName: Blue Detergent
+    Prefab: {fileID: 259295862030779902, guid: cd36898c680d163468256216fd8fd856, type: 3}
+  - PrettyName: Purple Detergent
+    Prefab: {fileID: 2538296487639873562, guid: da0194b4f6f197c4d8a54382e811812b, type: 3}
+  - PrettyName: Red Detergent
+    Prefab: {fileID: 8689092098474798429, guid: 25659bbbc066995418b3ca7dd942b2cc, type: 3}
+  - PrettyName: White Detergent
+    Prefab: {fileID: 2520536928478328721, guid: 65e40312f2970ac40a8ea86a7f36efee, type: 3}
+  - PrettyName: Digestif
+    Prefab: {fileID: 6166898503105947215, guid: ad60fb8b5febd0041ae90fb5e1d88caf, type: 3}
+  - PrettyName: Golf Dressing
+    Prefab: {fileID: 2422036632000234555, guid: 9cd5b63c371be9a45bfb25228f59c859, type: 3}
+  - PrettyName: Ketchup Dressing
+    Prefab: {fileID: 6534837752825587421, guid: 8a62da3d3ebe9ed47b23cccce9615af5, type: 3}
+  - PrettyName: Mayo Dressing
+    Prefab: {fileID: 6902604369831988479, guid: 8d0b3c99373b4b3489f3399de02e54c6, type: 3}
+  - PrettyName: Eggs Carton
+    Prefab: {fileID: 4065965781853297652, guid: dfdf88058672e7841a3c59524218be59, type: 3}
+  - PrettyName: Coffee Flask
+    Prefab: {fileID: 7950401314809960641, guid: adb0751c9517ab24dbf8e78b8ee4ed53, type: 3}
+  - PrettyName: Cream Flask
+    Prefab: {fileID: 9127753791110824373, guid: d72d7649a04593f47b5f19081fcf8f33, type: 3}
+  - PrettyName: Green Flask
+    Prefab: {fileID: 6910192884919448178, guid: 8e6cc71db1d4db8468e3b619ee367b32, type: 3}
+  - PrettyName: Orange Flask
+    Prefab: {fileID: 6054934928292567338, guid: 9fe069ac6c9b6284b8521df02a0f5a48, type: 3}
+  - PrettyName: Gummies
+    Prefab: {fileID: 6260942366009981554, guid: 44ab36c21d05c0343b753ea86a6f576f, type: 3}
+  - PrettyName: Sour Gummies
+    Prefab: {fileID: 1967282661585154938, guid: 5d33a3373a36c164b9ba64c39ed85ccb, type: 3}
+  - PrettyName: Black Jam
+    Prefab: {fileID: 5168891152161791667, guid: 7fb5aa8e109d79d42a396f3f8726e403, type: 3}
+  - PrettyName: Orange Jam
+    Prefab: {fileID: 7984255512986128789, guid: f4d98aed00c852f48aadcbc18fb3adcd, type: 3}
+  - PrettyName: Pink Jam
+    Prefab: {fileID: 2480433949808746154, guid: b6b2464f1a884584fb23b1c379530373, type: 3}
+  - PrettyName: Purple Jam
+    Prefab: {fileID: 2914324531079600294, guid: 423b034731212d24ebd9cc672297c40a, type: 3}
+  - PrettyName: Red Jam
+    Prefab: {fileID: 2342770865683269653, guid: ed46a76a6a82023439915173582eab12, type: 3}
+  - PrettyName: Yellow Jam
+    Prefab: {fileID: 7946522149634443866, guid: 4d8a52171516466468b4e61480c80a21, type: 3}
+  - PrettyName: Apple Juice
+    Prefab: {fileID: 2717412504716825153, guid: ce11b8423e7e7274dbbb8265c3699bd6, type: 3}
+  - PrettyName: Mango Juice
+    Prefab: {fileID: 6793599941875524284, guid: 1d89baa3525258a45a8054aa1ec78e5a, type: 3}
+  - PrettyName: Orange Juice
+    Prefab: {fileID: 4749556016884630997, guid: e1eb7777d60930a47ac6d63a8a6ba22d, type: 3}
+  - PrettyName: Tropical Juice
+    Prefab: {fileID: 8577524528394058524, guid: 1f1d47c92127a2a4cab855ee0460425d, type: 3}
+  - PrettyName: Milk
+    Prefab: {fileID: 7286657953743643742, guid: 6c2ec00213dc46a4aa0a93a66438443a, type: 3}
+  - PrettyName: Small Milk
+    Prefab: {fileID: 6456040804096973271, guid: d1ac225a41426fc4f874e6bd58eed252, type: 3}
+  - PrettyName: Small Strawberry Milk
+    Prefab: {fileID: 4334582932869356447, guid: 051ac239dc6625d41ab63d92de5cb6c2, type: 3}
+  - PrettyName: Strawberry Milk
+    Prefab: {fileID: 7833214973697377568, guid: 4414ba21d91cd8540ae1d1ea98d73d90, type: 3}
+  - PrettyName: Pizza Box
+    Prefab: {fileID: 141768754927037107, guid: 65bc4f3a4ca20054bb9121fd2d300f03, type: 3}
+  - PrettyName: Orange Pump Bottle
+    Prefab: {fileID: 1103231070429895319, guid: 799f86e0816d2d242a14c23b208e7ac3, type: 3}
+  - PrettyName: Purple Pump Bottle
+    Prefab: {fileID: 1897907195664060268, guid: 05860007a0e416b41b9ef2a16366f222, type: 3}
+  - PrettyName: Red Pump Bottle
+    Prefab: {fileID: 5062677170325287629, guid: a0fa18727cbd4974b82a8c0f60ce3579, type: 3}
+  - PrettyName: Ramen
+    Prefab: {fileID: 5638170912984819267, guid: 679f0adde5339414399147a55984c8ff, type: 3}
+  - PrettyName: Spicy Ramen
+    Prefab: {fileID: 6191536446481770662, guid: 0ef500eb3995c3846a650313a2adb3d6, type: 3}
+  - PrettyName: Kitchen Roll
+    Prefab: {fileID: 3323796228426793528, guid: 2e53025c832182c42b62f8f7877fcbf7, type: 3}
+  - PrettyName: Wrapped Kitchen Roll
+    Prefab: {fileID: 4622844788972160649, guid: 1866ff26ecee5924baf81505c6b19f0d, type: 3}
+  - PrettyName: Toilet Roll
+    Prefab: {fileID: 3686387800264800362, guid: 2f3b1e854e72ffd428a48fb470a06421, type: 3}
+  - PrettyName: Toilet Roll Pack
+    Prefab: {fileID: 184453942729408025, guid: a34e9ef5e9bf90743b7b29886d0a2e7c, type: 3}
+  - PrettyName: Cherry Soda
+    Prefab: {fileID: 8190375357647406717, guid: c5cab700530135a4ea605900f53ff718, type: 3}
+  - PrettyName: Energy Soda
+    Prefab: {fileID: 6836967597293159819, guid: 494094def76bc22448c107f6a29dcc78, type: 3}
+  - PrettyName: Zero Energy Soda
+    Prefab: {fileID: 2646016842020898024, guid: 57ac440730d67114b9ee5a8b64073eaa, type: 3}
+  - PrettyName: Grape Soda
+    Prefab: {fileID: 5775380937068407337, guid: ce51e350eb6488742851bc477f1ace74, type: 3}
+  - PrettyName: Orange Soda
+    Prefab: {fileID: 1218586775409148229, guid: 060a4a0a54294d74daee1053ea3c8681, type: 3}
+  - PrettyName: Watermelon Soda
+    Prefab: {fileID: 8672917867423409752, guid: b86569e5b74d1c945b6a19dd70bf49b1, type: 3}
+  - PrettyName: Eclair
+    Prefab: {fileID: 4464851913772339132, guid: 188689fbb580267489bd069f23780852, type: 3}
+  - PrettyName: Marshmallow
+    Prefab: {fileID: 3353142241777796773, guid: 8e249e0029497e84c8a58d4f6432a886, type: 3}
+  - PrettyName: S'mores
+    Prefab: {fileID: 3957803595404697396, guid: 4277ba120b19a1e4ebef7819ecd4f997, type: 3}
+  - PrettyName: Vanilla Sweet
+    Prefab: {fileID: 3857164103086942367, guid: 46ec8d60667b342418e2de262fe38739, type: 3}
+  - PrettyName: Blue Toothpaste
+    Prefab: {fileID: 4144959061743888119, guid: 81a06fd9074216c4b80f2e9d3868dff4, type: 3}
+  - PrettyName: Cream Toothpaste
+    Prefab: {fileID: 5717415409717605670, guid: e5cd28c026ee0b14e80f8d472596f84d, type: 3}
+  - PrettyName: Red Toothpaste
+    Prefab: {fileID: 8552409062464901655, guid: c372294b2e0ff3f42a23f724a576ebea, type: 3}
+  - PrettyName: Whisky
+    Prefab: {fileID: 5792914272059011895, guid: ed4612ecd20144142908cfcc57aa0110, type: 3}
+  - PrettyName: Red Wine
+    Prefab: {fileID: 680789239848784502, guid: 2f16c61aa75701e44bc218f5a51d6352, type: 3}
+  - PrettyName: White Wine
+    Prefab: {fileID: 4485212962634864109, guid: 3dfa6a2fff0bb6e4691a75d201b1c051, type: 3}
