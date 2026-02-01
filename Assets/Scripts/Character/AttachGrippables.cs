@@ -5,6 +5,8 @@ using UnityEngine;
 public class AttachGrippables : MonoBehaviour
 {
     [SerializeField] private float detachCollisionCooldownSeconds = 0.5f;
+    [SerializeField] private ParticleSystem attachAnimation = null;
+    [SerializeField] private ParticleSystem detachAnimation = null;
     
     public event Action OnAttach;
     public event Action OnDetach;
@@ -108,6 +110,8 @@ public class AttachGrippables : MonoBehaviour
             }
 
             AudioEventManager.Instance.PlaySoundEvent("stab", transform.position);
+
+            attachAnimation.Play();
         }
 
         OnAttach?.Invoke();
@@ -156,7 +160,9 @@ public class AttachGrippables : MonoBehaviour
         _nextCollisionTime = Time.time + detachCollisionCooldownSeconds;
 
         AudioEventManager.Instance.PlaySoundEvent("release", transform.position);
-        
-        OnDetach?.Invoke();
+
+		detachAnimation.Play();
+
+		OnDetach?.Invoke();
     }
 }
