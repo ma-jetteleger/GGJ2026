@@ -349,6 +349,7 @@ MonoBehaviour:
   targetScore: 1
   indicatorHoverAmplitude: 0.3
   indicatorHoverSpeed: 5
+  indicatorRotationSpeed: 45
 --- !u!1 &8094343108240451541
 GameObject:
   m_ObjectHideFlags: 0
