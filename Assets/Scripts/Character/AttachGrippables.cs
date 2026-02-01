@@ -96,6 +96,11 @@ public class AttachGrippables : MonoBehaviour
             targetRigidbody.isKinematic = true;
             targetRigidbody.transform.position = targetRigidbody.transform.position - (targetRigidbody.transform.position - transform.position).normalized * 0.1f;
 
+            if (!_grabbedObject.TryGetComponent<HeldByPlayerTag>(out _))
+            {
+                _grabbedObject.AddComponent<HeldByPlayerTag>();
+            }
+
             Collider targetCollider = targetRigidbody.GetComponent<Collider>();
             if (targetCollider != null)
             {
@@ -137,6 +142,12 @@ public class AttachGrippables : MonoBehaviour
         targetRigidbody.isKinematic = _originalIsKinematic;
 
         _grabbedObject.transform.SetParent(_originalParent, true);
+
+        var heldTag = _grabbedObject.GetComponent<HeldByPlayerTag>();
+        if (heldTag != null)
+        {
+            Destroy(heldTag);
+        }
 
         _grabbedObject = null;
         _originalParent = null;

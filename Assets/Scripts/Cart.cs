@@ -68,7 +68,22 @@ public class Cart : MonoBehaviour
 
     public void OnObjectDetected(GameObject detectedObject)
     {
+        if (scoreCounter >= targetScore)
+        {
+            return;
+        }
+
         if (requiredPrefab == null || detectedObject == null)
+        {
+            return;
+        }
+
+        if (detectedObject.GetComponent<PrefabGuid>() == null)
+        {
+            return;
+        }
+
+        if (detectedObject.GetComponent<HeldByPlayerTag>() != null)
         {
             return;
         }
