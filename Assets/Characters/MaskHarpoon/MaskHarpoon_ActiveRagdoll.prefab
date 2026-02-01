@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 7407761579893896922}
   - component: {fileID: 567028661129988595}
   - component: {fileID: -7704006619182311988}
+  - component: {fileID: 5579048360338869651}
   m_Layer: 7
   m_Name: MaskHarpoon_ActiveRagdoll
   m_TagString: Untagged
@@ -427,10 +428,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8875b70bfffce4c826824f93201c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnstuckRespawn
-  playerInput: {fileID: 0}
+  playerInput: {fileID: 6091717283714277158}
   unstuckActionName: Unstuck
   characterRoot: {fileID: 753236532650232678}
   characterPrefab: {fileID: 4599506479085570103}
+--- !u!114 &5579048360338869651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599506479085570103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29f301b0dae7c48479b6bf5090c3b53c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Restart
+  playerInput: {fileID: 6091717283714277158}
+  restartActionName: Restart
 --- !u!1 &8864341769938712016
 GameObject:
   m_ObjectHideFlags: 0
