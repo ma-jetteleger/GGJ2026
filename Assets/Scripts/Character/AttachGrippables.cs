@@ -111,6 +111,11 @@ public class AttachGrippables : MonoBehaviour
         DetachGrabbed();
     }
 
+    public void ForceDetach()
+    {
+        DetachGrabbed();
+    }
+
     private void DetachGrabbed()
     {
         if (_grabbedObject == null)
