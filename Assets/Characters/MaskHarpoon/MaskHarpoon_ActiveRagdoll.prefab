@@ -275,7 +275,7 @@ MonoBehaviour:
   minDistance: 1.2
   maxDistance: 3.5
   initialDistance: 2
-  minVerticalAngle: -17
+  minVerticalAngle: -70
   maxVerticalAngle: 60
   dontBlockCamera:
     serializedVersion: 2
