@@ -621,6 +621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7deb721f8f95046a9b0f9a7885039e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HarpoonTrigger
+  detachCollisionCooldownSeconds: 0.5
 --- !u!1001 &1970342297562815156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -935,6 +936,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -1526964690268444965, guid: 0e9a428405a52cf43b95ab206dd3babd, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4493585093827132993, guid: 4e783944627384f0c922357a87f49b10, type: 3}
     - target: {fileID: -516098083770646512, guid: 0e9a428405a52cf43b95ab206dd3babd, type: 3}
       propertyPath: m_Layer
       value: 7
