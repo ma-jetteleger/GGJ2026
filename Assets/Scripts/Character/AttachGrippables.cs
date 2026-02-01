@@ -106,7 +106,9 @@ public class AttachGrippables : MonoBehaviour
             {
                 Destroy(targetRigidbody);
             }
-		}
+
+            AudioEventManager.Instance.PlaySoundEvent("stab", transform.position);
+        }
 
         OnAttach?.Invoke();
     }
@@ -153,6 +155,8 @@ public class AttachGrippables : MonoBehaviour
         _originalParent = null;
         _nextCollisionTime = Time.time + detachCollisionCooldownSeconds;
 
+        AudioEventManager.Instance.PlaySoundEvent("release", transform.position);
+        
         OnDetach?.Invoke();
     }
 }
