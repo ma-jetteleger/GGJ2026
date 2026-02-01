@@ -1,13 +1,9 @@
 using UnityEngine;
-using TMPro;
 
 [RequireComponent(typeof(Camera))]
 public class ObjectiveUI : MonoBehaviour
 {
     public static ObjectiveUI Instance { get; private set; }
-
-    [Header("UI References")]
-    [SerializeField] private TextMeshProUGUI objectiveText;
 
     [Header("3D Setup")]
     [Tooltip("Layer for the UI Camera (Must match exactly).")]
@@ -19,7 +15,6 @@ public class ObjectiveUI : MonoBehaviour
     [SerializeField] private float framingMargin = 1.1f; 
     [SerializeField] private float rotationSpeed = 30f;
     [SerializeField] private Vector3 defaultRotation = new Vector3(0, 150, 0);
-    [SerializeField] private PrefabLibrary prefabLibrary = null;
 
     // Internal
     private GameObject _currentModel;
@@ -46,11 +41,6 @@ public class ObjectiveUI : MonoBehaviour
 
     // --- API ---
 
-    public void UpdateObjective(string newObjective)
-    {
-        if (objectiveText != null) objectiveText.text = newObjective;
-    }
-
     public void Show3DObjective(GameObject prefabToDisplay)
     {
         if (_currentModel != null) Destroy(_currentModel);
@@ -73,8 +63,6 @@ public class ObjectiveUI : MonoBehaviour
 
             // 5. Set Layer
             SetLayerRecursively(_currentModel, _cachedLayerId);
-
-            objectiveText.text = prefabLibrary.GetPrettyName(prefabToDisplay);
         }
     }
 
