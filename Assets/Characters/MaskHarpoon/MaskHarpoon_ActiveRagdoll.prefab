@@ -406,7 +406,7 @@ MonoBehaviour:
     directionChangeThresholdDegrees: 60
     stillTimeoutSeconds: 0.5
     requiredMovingSeconds: 1.5
-  debugLogging: 1
+  debugLogging: 0
   debugGui: 0
   debugGuiRect:
     serializedVersion: 2
