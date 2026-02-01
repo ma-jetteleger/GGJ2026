@@ -20,7 +20,6 @@ public class AttachGrippables : MonoBehaviour
     }
 
     private GameObject _grabbedObject;
-    private Grippable _grabbedGrippable;
     private Transform _originalParent;
     private bool _originalUseGravity;
     private bool _originalIsKinematic;
@@ -75,15 +74,10 @@ public class AttachGrippables : MonoBehaviour
         if (targetRigidbody == null || targetRigidbody.transform.IsChildOf(transform.root))
             return;
 
-        var targetGrippable = targetRigidbody?.GetComponent<Grippable>();
-        if(targetGrippable == null || targetGrippable.Gripped)
-			return;
-
 		if (targetRigidbody != null && !targetRigidbody.isKinematic)
         {
             GameObject attachGrippableGameObject = targetRigidbody.gameObject;
             _grabbedObject = attachGrippableGameObject;
-            _grabbedGrippable = targetGrippable;
             _originalParent = targetRigidbody.transform.parent;
             _originalUseGravity = targetRigidbody.useGravity;
             _originalIsKinematic = targetRigidbody.isKinematic;
@@ -97,7 +91,7 @@ public class AttachGrippables : MonoBehaviour
                 Constraints = targetRigidbody.constraints
             };
 
-            targetGrippable.transform.SetParent(transform);
+            targetRigidbody.transform.SetParent(transform);
             targetRigidbody.useGravity = false;
             targetRigidbody.isKinematic = true;
             targetRigidbody.transform.position = targetRigidbody.transform.position - (targetRigidbody.transform.position - transform.position).normalized * 0.1f;
@@ -107,9 +101,6 @@ public class AttachGrippables : MonoBehaviour
             {
                 Destroy(targetRigidbody);
             }
-
-            targetGrippable.Gripped = true;
-    
 		}
 
         OnAttach?.Invoke();
@@ -141,13 +132,8 @@ public class AttachGrippables : MonoBehaviour
         targetRigidbody.isKinematic = _originalIsKinematic;
 
         _grabbedObject.transform.SetParent(_originalParent, true);
-        if (_grabbedGrippable != null)
-        {
-            _grabbedGrippable.Gripped = false;
-        }
 
         _grabbedObject = null;
-        _grabbedGrippable = null;
         _originalParent = null;
         _nextCollisionTime = Time.time + detachCollisionCooldownSeconds;
 
