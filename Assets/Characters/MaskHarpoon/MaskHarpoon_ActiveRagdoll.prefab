@@ -276,7 +276,7 @@ MonoBehaviour:
   maxDistance: 3.5
   initialDistance: 2
   minVerticalAngle: -70
-  maxVerticalAngle: 60
+  maxVerticalAngle: 50
   dontBlockCamera:
     serializedVersion: 2
     m_Bits: 128
