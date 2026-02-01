@@ -117,6 +117,8 @@ public class Cart : MonoBehaviour
 
         scoreCounter++;
 
+        AudioEventManager.Instance.PlaySoundEvent("score", transform.position);
+        
         winAnimation.Play();
 
 		Debug.Log($"Score: {scoreCounter}");
