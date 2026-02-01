@@ -5,6 +5,8 @@ using UnityEngine;
 public class AttachGrippables : MonoBehaviour
 {
     [SerializeField] private float detachCollisionCooldownSeconds = 0.5f;
+    [SerializeField] private ParticleSystem attachAnimation = null;
+    [SerializeField] private ParticleSystem detachAnimation = null;
     
     public event Action OnAttach;
     public event Action OnDetach;
@@ -106,6 +108,8 @@ public class AttachGrippables : MonoBehaviour
             {
                 Destroy(targetRigidbody);
             }
+
+            attachAnimation.Play();
 		}
 
         OnAttach?.Invoke();
@@ -153,6 +157,8 @@ public class AttachGrippables : MonoBehaviour
         _originalParent = null;
         _nextCollisionTime = Time.time + detachCollisionCooldownSeconds;
 
-        OnDetach?.Invoke();
+		detachAnimation.Play();
+
+		OnDetach?.Invoke();
     }
 }
