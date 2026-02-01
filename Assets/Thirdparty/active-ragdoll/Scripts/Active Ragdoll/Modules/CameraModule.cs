@@ -67,7 +67,7 @@ namespace ActiveRagdoll {
             _smoothedLookPoint = _lookPoint.position;
             _currentDistance = initialDistance;
 
-            _startDirection = _lookPoint.forward;
+            _startDirection = -_lookPoint.forward;
         }
 
         void Update() {

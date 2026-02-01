@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Cart : MonoBehaviour
 {
+    public event Action<Cart> Completed;
+
     [SerializeField] private List<GameObject> requirementPrefabs = new List<GameObject>();
     [SerializeField] private Transform targetTransform;
     [SerializeField] private GameObject celebrationVfx;
@@ -21,6 +23,9 @@ public class Cart : MonoBehaviour
     private Vector3 indicatorBaseLocalPosition;
     private Quaternion indicatorBaseLocalRotation;
     private int scoreCounter;
+    private GameObject lastScoredObject;
+
+    public bool IsComplete => scoreCounter >= targetScore;
 
     private void Start()
     {
@@ -116,6 +121,7 @@ public class Cart : MonoBehaviour
         Debug.Log($"Spawned indicator for {detectedObject.name}");
 
         scoreCounter++;
+        lastScoredObject = detectedObject;
 
         AudioEventManager.Instance.PlaySoundEvent("score", transform.position);
         
@@ -129,6 +135,7 @@ public class Cart : MonoBehaviour
         else
         {
 			indicatorGlow.SetActive(false);
+            Completed?.Invoke(this);
 		}
     }
 
@@ -185,4 +192,28 @@ public class Cart : MonoBehaviour
     {
 		fireAnimation.SetActive(false);
 	}
+
+    public void ResetCart()
+    {
+        scoreCounter = 0;
+
+        if (lastScoredObject != null)
+        {
+            Destroy(lastScoredObject);
+            lastScoredObject = null;
+        }
+
+        if (currentIndicator != null)
+        {
+            Destroy(currentIndicator);
+            currentIndicator = null;
+        }
+
+        if (indicatorGlow != null && !indicatorGlow.activeSelf)
+        {
+            indicatorGlow.SetActive(true);
+        }
+
+        SpawnRequirement();
+    }
 }

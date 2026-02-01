@@ -49,17 +49,20 @@ MonoBehaviour:
   - key: release
     soundEvent:
       clips:
-      - {fileID: 8300000, guid: 28f534de2db0f4542be2fd87d97864ad, type: 3}
+      - {fileID: 8300000, guid: fe4fda11e478d2842ae5f9b985f670f5, type: 3}
+      volume: -1
   - key: score
     soundEvent:
       clips:
       - {fileID: 8300000, guid: ed8d3e96f609a4f49b25dcb4ac1fed8d, type: 3}
+      volume: -1
   - key: stab
     soundEvent:
       clips:
       - {fileID: 8300000, guid: b4b190818e70e6a41ae5cb692af24f1f, type: 3}
       - {fileID: 8300000, guid: 6869d8e220b7ad74b84a9c2034771b7b, type: 3}
       - {fileID: 8300000, guid: a025d410f426b2c4c988727868b398a1, type: 3}
+      volume: -1
 --- !u!82 &3322589289894768758
 AudioSource:
   m_ObjectHideFlags: 0
@@ -73,7 +76,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 6593d0931600718428e44d04b905234c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -7,6 +7,7 @@ public class AudioEventManager : MonoBehaviour
     public struct SoundEvent
     {
         [SerializeField] private List<AudioClip> clips;
+        [SerializeField] private float volume;
 
         public AudioClip GetRandomClip()
         {
@@ -17,6 +18,8 @@ public class AudioEventManager : MonoBehaviour
 
             return clips[Random.Range(0, clips.Count)];
         }
+
+        public float Volume => volume;
     }
 
     [System.Serializable]
@@ -70,6 +73,12 @@ public class AudioEventManager : MonoBehaviour
             return;
         }
 
-        AudioSource.PlayClipAtPoint(clip, location);
+        float volume = soundEvent.Volume;
+        if (volume <= 0f)
+        {
+            volume = 1f;
+        }
+
+        AudioSource.PlayClipAtPoint(clip, location, volume);
     }
 }
