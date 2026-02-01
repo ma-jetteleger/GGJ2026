@@ -69,6 +69,16 @@ public class Cart : MonoBehaviour
         {
             return;
         }
+
+        if (detectedObject.GetComponent<PrefabGuid>() == null)
+        {
+            return;
+        }
+
+        if (detectedObject.GetComponent<HeldByPlayerTag>() != null)
+        {
+            return;
+        }
         
         Debug.Log($"Object detected: {detectedObject.name}");
 
