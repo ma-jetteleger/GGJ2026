@@ -17,6 +17,7 @@ public class Cart : MonoBehaviour
     [SerializeField] private GameObject indicatorGlow = null;
     [SerializeField] private ParticleSystem winAnimation = null;
     [SerializeField] private GameObject fireAnimation = null;
+    public PrefabLibrary prefabLibrary = null;
 
     private GameObject requiredPrefab;
     private GameObject currentIndicator;
@@ -24,11 +25,13 @@ public class Cart : MonoBehaviour
     private Quaternion indicatorBaseLocalRotation;
     private int scoreCounter;
     private GameObject lastScoredObject;
+    private GroceryListController listController;
 
     public bool IsComplete => scoreCounter >= targetScore;
 
     private void Start()
     {
+        listController = UnityEngine.Object.FindFirstObjectByType<GroceryListController>();
         SpawnRequirement();
     }
 
@@ -64,6 +67,12 @@ public class Cart : MonoBehaviour
         RemovePhysicsComponents(currentIndicator);
         
         Debug.Log($"Picked new requirement prefab: {requiredPrefab.name}");
+
+        if (listController != null && prefabLibrary != null)
+        {
+            string prettyName = prefabLibrary.GetPrettyName(requiredPrefab);
+            listController.AddItem(prettyName);
+        }
 
         if(!indicatorGlow.activeSelf)
         {
@@ -119,6 +128,12 @@ public class Cart : MonoBehaviour
         }
 
         Debug.Log($"Spawned indicator for {detectedObject.name}");
+
+        if (listController != null && prefabLibrary != null && requiredPrefab != null)
+        {
+            string prettyName = prefabLibrary.GetPrettyName(requiredPrefab);
+            listController.MarkItemFound(prettyName);
+        }
 
         scoreCounter++;
         lastScoredObject = detectedObject;

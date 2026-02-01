@@ -77,6 +77,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "List",
+                    "type": "Button",
+                    "id": "20351f66-17a6-4ebe-86b0-46b1f2a2643b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -363,6 +372,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "InvertY",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a45c2f17-c3c1-4ed5-ae0b-517056bb2c2d",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "List",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bfb9e565-f3f1-436a-a46c-e79dea8a6f46",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "List",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -4,6 +4,18 @@ using UnityEngine;
 public class CartManager : MonoBehaviour
 {
     [SerializeField] private List<Cart> carts = new List<Cart>();
+    [SerializeField] private PrefabLibrary prefabLibrary = null;
+
+    private void Awake()
+    {
+        foreach (Cart cart in carts)
+        {
+            if (cart != null)
+            {
+                cart.prefabLibrary = prefabLibrary;
+            }
+        }
+    }
 
     private void OnEnable()
     {
