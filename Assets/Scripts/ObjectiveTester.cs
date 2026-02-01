@@ -4,7 +4,7 @@ public class ObjectiveTester : MonoBehaviour
 {
     [Header("Test Settings")]
     public GameObject prefabToTest;
-    public string testObjectiveText = "Test Objective Loaded!";
+    public string testObjectiveText = "Test Objective";
 
     // This method is called by the custom button in the Inspector
     public void TestDisplay()
@@ -15,16 +15,15 @@ public class ObjectiveTester : MonoBehaviour
             return;
         }
 
-        if (ObjectiveUI.Instance == null)
+        GroceryListController controller = FindObjectOfType<GroceryListController>();
+        if (controller == null)
         {
-            Debug.LogError("ObjectiveUI Instance not found! Make sure the 'ObjectiveUI' script is attached to a GameObject in your scene.");
+            Debug.LogError("GroceryListController not found in the scene!");
             return;
         }
 
-        // 1. Update Text
-        // ObjectiveUI.Instance.UpdateObjective(testObjectiveText);
-        
-        // 2. Update 3D Model
-        ObjectiveUI.Instance.Show3DObjective(prefabToTest);
+        // Add the item to the grocery list
+        // Note: Duplicate items with the same name will be ignored by the controller's logic
+        controller.AddItem(testObjectiveText, prefabToTest);
     }
 }

@@ -6,6 +6,7 @@ public class GroceryListItem : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI itemLabel;
     [SerializeField] private Image checkmarkImage;
+    [SerializeField] private RawImage iconImage;
     [SerializeField] private Button button;
 
     private string itemName;
@@ -16,10 +17,11 @@ public class GroceryListItem : MonoBehaviour
         UpdateVisuals();
     }
 
-    public void Setup(string name)
+    public void Setup(string name, Texture icon = null)
     {
         this.itemName = name;
         if (itemLabel != null) itemLabel.text = name;
+        if (iconImage != null && icon != null) iconImage.texture = icon;
         isChecked = false;
         UpdateVisuals();
     }

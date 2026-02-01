@@ -71,7 +71,7 @@ public class Cart : MonoBehaviour
         if (listController != null && prefabLibrary != null)
         {
             string prettyName = prefabLibrary.GetPrettyName(requiredPrefab);
-            listController.AddItem(prettyName);
+            listController.AddItem(prettyName, requiredPrefab);
         }
 
         if(!indicatorGlow.activeSelf)

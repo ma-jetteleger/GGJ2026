@@ -190,7 +190,6 @@ MonoBehaviour:
   - {fileID: 4934728101027336172, guid: 35b128426be65b34e8ac6655085b3982, type: 3}
   - {fileID: 6219827631454603225, guid: 6940606989664ad48970910d84b0c7be, type: 3}
   - {fileID: 2319342909546838228, guid: 845d5464fd637d4479d8c79c186ae26b, type: 3}
-  - {fileID: 4513960971000923157, guid: fb129445044d99848836fb4395b07f5b, type: 3}
   - {fileID: 8934874688299097311, guid: 9cd779e1f7d00274ca46d0568de1c758, type: 3}
   - {fileID: 4416737249686477972, guid: 59ca9973af95c6648b276369cd673de1, type: 3}
   - {fileID: 706618623269715937, guid: 58c35164be6bb204683c679115f678b8, type: 3}
@@ -355,6 +354,7 @@ MonoBehaviour:
   indicatorGlow: {fileID: 3045056970873892898}
   winAnimation: {fileID: 5833316808909664722}
   fireAnimation: {fileID: 2615332255547870925}
+  prefabLibrary: {fileID: 0}
 --- !u!1 &8094343108240451541
 GameObject:
   m_ObjectHideFlags: 0

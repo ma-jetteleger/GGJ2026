@@ -41,6 +41,11 @@ namespace ActiveRagdoll {
         Rigidbody _rightFoot, _leftFoot;
 
 
+        void Awake() {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
         void Start() {
             _rightFoot = _activeRagdoll.GetPhysicalBone(HumanBodyBones.RightFoot).GetComponent<Rigidbody>();
             _leftFoot = _activeRagdoll.GetPhysicalBone(HumanBodyBones.LeftFoot).GetComponent<Rigidbody>();
