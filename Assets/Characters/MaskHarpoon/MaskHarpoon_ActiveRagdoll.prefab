@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7083152222929566895}
   - component: {fileID: 4388142417045069131}
   - component: {fileID: 7407761579893896922}
+  - component: {fileID: 567028661129988595}
   m_Layer: 7
   m_Name: MaskHarpoon_ActiveRagdoll
   m_TagString: Untagged
@@ -381,6 +382,32 @@ MonoBehaviour:
   attachGrippables: {fileID: 1190853467089448886}
   _enableMovement: 1
   _animationSpeedMultiplier: 3
+--- !u!114 &567028661129988595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599506479085570103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad7adb4de4e85347a9d4a9a04c8d4ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LookWiggleDetector
+  playerInput: {fileID: 0}
+  lookActionName: Look
+  minInputMagnitude: 0.7
+  directionChangeThresholdDegrees: 90
+  stillTimeoutSeconds: 0.5
+  requiredMovingSeconds: 1
+  debugLogging: 0
+  debugGui: 1
+  debugGuiRect:
+    serializedVersion: 2
+    x: 20
+    y: 20
+    width: 200
+    height: 18
 --- !u!1 &8864341769938712016
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,7 +436,7 @@ Transform:
   m_GameObject: {fileID: 8864341769938712016}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7068327, y: -0.00000017881393, z: 0.000000095926225, w: 0.70738083}
-  m_LocalPosition: {x: 0, y: 0.15, z: 1.088}
+  m_LocalPosition: {x: 0.013, y: 0.15, z: 1.088}
   m_LocalScale: {x: 0.15, y: 1, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -449,7 +476,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 07dc66ae04b7f6a43b9674bf0fefb33a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -564,7 +591,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aeea0b0ce40f57741addd46857bdbc00, type: 2}
+  - {fileID: 2100000, guid: 652107f36a28e44479c0b827dee5852a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -621,7 +648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7deb721f8f95046a9b0f9a7885039e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HarpoonTrigger
-  detachCollisionCooldownSeconds: 0.5
+  detachCollisionCooldownSeconds: 1
 --- !u!1001 &1970342297562815156
 PrefabInstance:
   m_ObjectHideFlags: 0
