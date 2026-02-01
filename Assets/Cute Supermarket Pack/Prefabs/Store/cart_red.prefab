@@ -350,6 +350,7 @@ MonoBehaviour:
   indicatorHoverAmplitude: 0.3
   indicatorHoverSpeed: 5
   indicatorRotationSpeed: 45
+  indicatorGlow: {fileID: 3045056970873892898}
 --- !u!1 &8094343108240451541
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,7 +529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5302975602005186252, guid: 2f368755ca17c1e4a8629e7c97a17168, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.150002
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 5302975602005186252, guid: 2f368755ca17c1e4a8629e7c97a17168, type: 3}
       propertyPath: m_LocalPosition.z
@@ -574,5 +575,10 @@ PrefabInstance:
 --- !u!4 &541678108440286513 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5302975602005186252, guid: 2f368755ca17c1e4a8629e7c97a17168, type: 3}
+  m_PrefabInstance: {fileID: 5626009031843070973}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3045056970873892898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7228750494387581919, guid: 2f368755ca17c1e4a8629e7c97a17168, type: 3}
   m_PrefabInstance: {fileID: 5626009031843070973}
   m_PrefabAsset: {fileID: 0}
