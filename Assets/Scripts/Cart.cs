@@ -13,6 +13,8 @@ public class Cart : MonoBehaviour
     [SerializeField] private float indicatorHoverSpeed = 1f;
     [SerializeField] private float indicatorRotationSpeed = 45f;
     [SerializeField] private GameObject indicatorGlow = null;
+    [SerializeField] private ParticleSystem winAnimation = null;
+    [SerializeField] private GameObject fireAnimation = null;
 
     private GameObject requiredPrefab;
     private GameObject currentIndicator;
@@ -90,7 +92,12 @@ public class Cart : MonoBehaviour
 
         if (!IsMatch(detectedObject, requiredPrefab))
         {
-            return;
+            fireAnimation.SetActive(true);
+            fireAnimation.GetComponent<ParticleSystem>().Play();
+
+			Invoke("StopFireAnimation", 3f);
+
+			return;
         }
         
         Debug.Log($"Got a match for {detectedObject.name}");
@@ -109,8 +116,10 @@ public class Cart : MonoBehaviour
         Debug.Log($"Spawned indicator for {detectedObject.name}");
 
         scoreCounter++;
-        
-        Debug.Log($"Score: {scoreCounter}");
+
+        winAnimation.Play();
+
+		Debug.Log($"Score: {scoreCounter}");
         if (scoreCounter < targetScore)
         {
             SpawnRequirement();
@@ -169,4 +178,9 @@ public class Cart : MonoBehaviour
             Destroy(rigidbody);
         }
     }
+
+    private void StopFireAnimation()
+    {
+		fireAnimation.SetActive(false);
+	}
 }
