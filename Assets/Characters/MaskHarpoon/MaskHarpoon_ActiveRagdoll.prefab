@@ -397,16 +397,16 @@ MonoBehaviour:
   playerInput: {fileID: 0}
   lookActionName: Look
   mouseSettings:
-    minInputMagnitude: 0
-    directionChangeThresholdDegrees: 0
-    stillTimeoutSeconds: 0
-    requiredMovingSeconds: 0
+    minInputMagnitude: 15
+    directionChangeThresholdDegrees: 70
+    stillTimeoutSeconds: 0.5
+    requiredMovingSeconds: 1.5
   controllerSettings:
-    minInputMagnitude: 0
-    directionChangeThresholdDegrees: 0
-    stillTimeoutSeconds: 0
-    requiredMovingSeconds: 0
-  debugLogging: 0
+    minInputMagnitude: 10
+    directionChangeThresholdDegrees: 60
+    stillTimeoutSeconds: 0.5
+    requiredMovingSeconds: 1.5
+  debugLogging: 1
   debugGui: 0
   debugGuiRect:
     serializedVersion: 2

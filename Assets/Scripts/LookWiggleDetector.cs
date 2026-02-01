@@ -4,16 +4,25 @@ using UnityEngine.InputSystem;
 
 public class LookWiggleDetector : MonoBehaviour
 {
+    [Serializable]
+    public struct LookWiggleSettings
+    {
+        public float minInputMagnitude;
+        public float directionChangeThresholdDegrees;
+        public float stillTimeoutSeconds;
+        public float requiredMovingSeconds;
+    }
+
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private string lookActionName = "Look";
-    [SerializeField] private float minInputMagnitude = 0.1f;
-    [SerializeField] private float directionChangeThresholdDegrees = 90f;
-    [SerializeField] private float stillTimeoutSeconds = 0.5f;
-    [SerializeField] private float requiredMovingSeconds = 4f;
+    [SerializeField] private LookWiggleSettings mouseSettings;
+    [SerializeField] private LookWiggleSettings controllerSettings;
     [SerializeField] private bool debugLogging;
     [SerializeField] private bool debugGui;
     [SerializeField] private Rect debugGuiRect = new Rect(20f, 20f, 200f, 18f);
 
+    private InputAction _lookAction;
+    private LookWiggleSettings _activeSettings;
     private float _lastDirectionChangeTime = -999f;
     private float _movingTime;
     private bool _isMovingQuickly;
@@ -22,7 +31,9 @@ public class LookWiggleDetector : MonoBehaviour
 
     public bool IsMovingQuickly => _isMovingQuickly;
     public float MovingTime => _movingTime;
-    public float WiggleProgress => requiredMovingSeconds > 0f ? Mathf.Clamp01(_movingTime / requiredMovingSeconds) : 0f;
+    public float WiggleProgress => _activeSettings.requiredMovingSeconds > 0f
+        ? Mathf.Clamp01(_movingTime / _activeSettings.requiredMovingSeconds)
+        : 0f;
     public event Action WiggledFully;
 
     private void Awake()
@@ -31,6 +42,13 @@ public class LookWiggleDetector : MonoBehaviour
         {
             playerInput = GetComponent<PlayerInput>();
         }
+
+        if (playerInput != null)
+        {
+            _lookAction = playerInput.actions[lookActionName];
+        }
+
+        _activeSettings = mouseSettings;
     }
 
     private void Update()
@@ -40,9 +58,19 @@ public class LookWiggleDetector : MonoBehaviour
             return;
         }
 
-        Vector2 lookInput = playerInput.actions[lookActionName].ReadValue<Vector2>();
+        if (_lookAction == null)
+        {
+            _lookAction = playerInput.actions[lookActionName];
+            if (_lookAction == null)
+            {
+                return;
+            }
+        }
+
+        _activeSettings = GetActiveSettings();
+        Vector2 lookInput = _lookAction.ReadValue<Vector2>();
         float magnitude = lookInput.magnitude;
-        bool hasInput = magnitude >= minInputMagnitude;
+        bool hasInput = magnitude >= _activeSettings.minInputMagnitude;
         float angleDelta = 0f;
 
         if (hasInput)
@@ -51,7 +79,7 @@ public class LookWiggleDetector : MonoBehaviour
             if (_hasLastDirection)
             {
                 angleDelta = Vector2.Angle(_lastDirection, currentDirection);
-                if (angleDelta >= directionChangeThresholdDegrees)
+                if (angleDelta >= _activeSettings.directionChangeThresholdDegrees)
                 {
                     _lastDirectionChangeTime = Time.time;
                     if (!_isMovingQuickly)
@@ -66,7 +94,7 @@ public class LookWiggleDetector : MonoBehaviour
             _hasLastDirection = true;
         }
 
-        if (_isMovingQuickly && Time.time - _lastDirectionChangeTime > stillTimeoutSeconds)
+        if (_isMovingQuickly && Time.time - _lastDirectionChangeTime > _activeSettings.stillTimeoutSeconds)
         {
             _isMovingQuickly = false;
             _movingTime = 0f;
@@ -75,9 +103,9 @@ public class LookWiggleDetector : MonoBehaviour
         if (_isMovingQuickly)
         {
             _movingTime += Time.deltaTime;
-            if (_movingTime >= requiredMovingSeconds)
+            if (_movingTime >= _activeSettings.requiredMovingSeconds)
             {
-                Debug.Log("WE BE WIGGLED NOW!");
+                Debug.Log("<color=green>WE BE WIGGLED NOW!</color>");
                 WiggledFully?.Invoke();
                 ResetWiggle();
             }
@@ -97,6 +125,28 @@ public class LookWiggleDetector : MonoBehaviour
         _isMovingQuickly = false;
         _lastDirection = Vector2.zero;
         _hasLastDirection = false;
+    }
+
+    private LookWiggleSettings GetActiveSettings()
+    {
+        InputDevice activeDevice = _lookAction.activeControl?.device;
+        if (activeDevice is Mouse)
+        {
+            return mouseSettings;
+        }
+
+        if (activeDevice != null)
+        {
+            return controllerSettings;
+        }
+
+        string scheme = playerInput.currentControlScheme;
+        if (!string.IsNullOrEmpty(scheme) && scheme.IndexOf("Mouse", StringComparison.OrdinalIgnoreCase) >= 0)
+        {
+            return mouseSettings;
+        }
+
+        return controllerSettings;
     }
 
     private void OnGUI()
