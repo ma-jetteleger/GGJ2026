@@ -60,6 +60,11 @@ public class Cart : MonoBehaviour
 
     public void OnObjectDetected(GameObject detectedObject)
     {
+        if (scoreCounter >= targetScore)
+        {
+            return;
+        }
+
         if (requiredPrefab == null || detectedObject == null)
         {
             return;
