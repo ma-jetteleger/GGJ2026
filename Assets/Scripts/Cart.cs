@@ -12,6 +12,7 @@ public class Cart : MonoBehaviour
     [SerializeField] private float indicatorHoverAmplitude = 0.15f;
     [SerializeField] private float indicatorHoverSpeed = 1f;
     [SerializeField] private float indicatorRotationSpeed = 45f;
+    [SerializeField] private GameObject indicatorGlow = null;
 
     private GameObject requiredPrefab;
     private GameObject currentIndicator;
@@ -56,7 +57,12 @@ public class Cart : MonoBehaviour
         RemovePhysicsComponents(currentIndicator);
         
         Debug.Log($"Picked new requirement prefab: {requiredPrefab.name}");
-    }
+
+        if(!indicatorGlow.activeSelf)
+        {
+			indicatorGlow.SetActive(true);
+		}
+	}
 
     public void OnObjectDetected(GameObject detectedObject)
     {
@@ -109,6 +115,10 @@ public class Cart : MonoBehaviour
         {
             SpawnRequirement();
         }
+        else
+        {
+			indicatorGlow.SetActive(false);
+		}
     }
 
     private static bool IsMatch(GameObject detectedObject, GameObject prefab)
