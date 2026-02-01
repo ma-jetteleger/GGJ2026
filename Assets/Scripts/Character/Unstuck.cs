@@ -1,12 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class UnstuckRespawn : MonoBehaviour
+public class Unstuck : MonoBehaviour
 {
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private string unstuckActionName = "Unstuck";
     [SerializeField] private Transform characterRoot;
-    [SerializeField] private GameObject characterPrefab;
 
     private InputAction _unstuckAction;
 
@@ -62,7 +61,7 @@ public class UnstuckRespawn : MonoBehaviour
     private void HandleUnstuckPerformed(InputAction.CallbackContext context)
     {
         DetachGrippables();
-        RespawnCharacter();
+        ResetCharacter();
     }
 
     private void DetachGrippables()
@@ -79,25 +78,22 @@ public class UnstuckRespawn : MonoBehaviour
         }
     }
 
-    private void RespawnCharacter()
+    private void ResetCharacter()
     {
         PlayerStart start = FindObjectOfType<PlayerStart>();
         if (start == null)
         {
-            Debug.LogWarning("UnstuckRespawn: no PlayerStart found in the scene.");
+            Debug.LogWarning("Unstuck: no PlayerStart found in the scene.");
             return;
         }
 
         if (characterRoot == null)
         {
-            Debug.LogWarning("UnstuckRespawn: no character root set to destroy.");
+            Debug.LogWarning("Unstuck: no character root set to reset.");
             return;
         }
 
-        Transform parent = characterRoot.parent;
-        GameObject prefabToSpawn = characterPrefab != null ? characterPrefab : characterRoot.gameObject;
-
-        Instantiate(prefabToSpawn, start.transform.position, start.transform.rotation, parent);
-        Destroy(characterRoot.gameObject);
+        characterRoot.SetPositionAndRotation(start.transform.position, start.transform.rotation);
+        
     }
 }
