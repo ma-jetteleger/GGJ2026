@@ -267,8 +267,10 @@ MonoBehaviour:
   _lookPoint: {fileID: 5061943608461459052}
   lookSensitivity: 1
   scrollSensitivity: 1
-  invertY: 1
+  invertY: 0
   invertX: 0
+  playerInput: {fileID: 6091717283714277158}
+  invertYActionName: InvertY
   smoothSpeed: 5
   smooth: 1
   improveSteepInclinations: 1

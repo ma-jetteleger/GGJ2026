@@ -1,4 +1,4 @@
-﻿#pragma warning disable 649
+﻿﻿#pragma warning disable 649
 
 using System;
 using UnityEngine;
@@ -15,10 +15,13 @@ namespace ActiveRagdoll {
         public float lookSensitivity = 1;
         public float scrollSensitivity = 1;
         public bool invertY = false, invertX = false;
+        [SerializeField] private PlayerInput playerInput;
+        [SerializeField] private string invertYActionName = "InvertY";
 
         public GameObject Camera { get; private set; }
         private Vector2 _cameraRotation;
         private Vector2 _inputDelta;
+        private InputAction _invertYAction;
 
 
         [Header("--- SMOOTHING ---")]
@@ -54,6 +57,26 @@ namespace ActiveRagdoll {
 
         [Tooltip("How far to reposition the camera from an obstacle.")]
         public float cameraRepositionOffset = 0.15f;
+
+        private void Awake() {
+            if (playerInput == null) {
+                playerInput = GetComponent<PlayerInput>();
+            }
+
+            if (playerInput != null) {
+                _invertYAction = playerInput.actions[invertYActionName];
+            }
+        }
+
+        private void OnEnable() {
+            BindInvertYAction();
+        }
+
+        private void OnDisable() {
+            if (_invertYAction != null) {
+                _invertYAction.performed -= HandleInvertYPerformed;
+            }
+        }
 
         private void OnValidate() {
             if (_lookPoint == null)
@@ -124,6 +147,28 @@ namespace ActiveRagdoll {
             var scrollValue = value.Get<Vector2>();
             _currentDistance = Mathf.Clamp(_currentDistance + scrollValue.y / 1200 * - scrollSensitivity,
                                     minDistance, maxDistance);
+        }
+
+        public void OnInvertY() {
+            invertY = !invertY;
+        }
+
+        private void BindInvertYAction() {
+            if (playerInput == null) {
+                return;
+            }
+
+            if (_invertYAction == null) {
+                _invertYAction = playerInput.actions[invertYActionName];
+            }
+
+            if (_invertYAction != null) {
+                _invertYAction.performed += HandleInvertYPerformed;
+            }
+        }
+
+        private void HandleInvertYPerformed(InputAction.CallbackContext context) {
+            OnInvertY();
         }
     }
 } // namespace ActiveRagdoll
