@@ -11,35 +11,32 @@ public class Cart : MonoBehaviour
     [SerializeField] private int targetScore = 1;
     [SerializeField] private float indicatorHoverAmplitude = 0.15f;
     [SerializeField] private float indicatorHoverSpeed = 1f;
+    [SerializeField] private float indicatorRotationSpeed = 45f;
 
     private GameObject requiredPrefab;
     private GameObject currentIndicator;
     private Vector3 indicatorBaseLocalPosition;
+    private Quaternion indicatorBaseLocalRotation;
     private int scoreCounter;
 
     private void Start()
     {
-        PickNewRequirement();
         SpawnRequirement();
     }
 
-    public void PickNewRequirement()
+    public GameObject PickNewRequirement()
     {
         if (requirementPrefabs == null || requirementPrefabs.Count == 0)
         {
-            requiredPrefab = null;
-            return;
+            return null;
         }
 
-        requiredPrefab = requirementPrefabs[UnityEngine.Random.Range(0, requirementPrefabs.Count)];
+        return requirementPrefabs[UnityEngine.Random.Range(0, requirementPrefabs.Count)];
     }
 
     public void SpawnRequirement()
     {
-        if (requiredPrefab == null)
-        {
-            PickNewRequirement();
-        }
+        requiredPrefab = PickNewRequirement();
 
         if (requiredPrefab == null || targetTransform == null)
         {
@@ -55,7 +52,10 @@ public class Cart : MonoBehaviour
         currentIndicator.transform.localPosition = Vector3.zero;
         currentIndicator.transform.localRotation = Quaternion.identity;
         indicatorBaseLocalPosition = currentIndicator.transform.localPosition;
+        indicatorBaseLocalRotation = currentIndicator.transform.localRotation;
         RemovePhysicsComponents(currentIndicator);
+        
+        Debug.Log($"Picked new requirement prefab: {requiredPrefab.name}");
     }
 
     public void OnObjectDetected(GameObject detectedObject)
@@ -64,11 +64,15 @@ public class Cart : MonoBehaviour
         {
             return;
         }
+        
+        Debug.Log($"Object detected: {detectedObject.name}");
 
         if (!IsMatch(detectedObject, requiredPrefab))
         {
             return;
         }
+        
+        Debug.Log($"Got a match for {detectedObject.name}");
 
         if (celebrationVfx != null)
         {
@@ -81,10 +85,13 @@ public class Cart : MonoBehaviour
             currentIndicator = null;
         }
 
+        Debug.Log($"Spawned indicator for {detectedObject.name}");
+
         scoreCounter++;
+        
+        Debug.Log($"Score: {scoreCounter}");
         if (scoreCounter < targetScore)
         {
-            PickNewRequirement();
             SpawnRequirement();
         }
     }
@@ -96,10 +103,20 @@ public class Cart : MonoBehaviour
             return true;
         }
 
-        var detectedName = detectedObject.name;
-        var prefabName = prefab.name;
-        return string.Equals(detectedName, prefabName, StringComparison.Ordinal)
-            || string.Equals(detectedName, prefabName + "(Clone)", StringComparison.Ordinal);
+        var detectedGuidComponent = detectedObject.GetComponent<PrefabGuid>();
+        var prefabGuidComponent = prefab.GetComponent<PrefabGuid>();
+
+        
+        if (detectedGuidComponent == null || prefabGuidComponent == null)
+        {
+            Debug.LogError($"{prefab.name} or {detectedObject.name} does not have a PrefabGuid component!");
+            return false;
+        }
+        
+        Debug.Log($"Comparing {detectedObject} [{detectedGuidComponent.Guid}] to {prefab} [{prefabGuidComponent.Guid}]");
+
+        return !string.IsNullOrEmpty(detectedGuidComponent.Guid)
+               && string.Equals(detectedGuidComponent.Guid, prefabGuidComponent.Guid, StringComparison.Ordinal);
     }
 
     private void Update()
@@ -111,6 +128,8 @@ public class Cart : MonoBehaviour
 
         var offsetY = Mathf.Sin(Time.time * indicatorHoverSpeed) * indicatorHoverAmplitude;
         currentIndicator.transform.localPosition = indicatorBaseLocalPosition + new Vector3(0f, offsetY, 0f);
+        currentIndicator.transform.localRotation = indicatorBaseLocalRotation
+            * Quaternion.Euler(0f, Time.time * indicatorRotationSpeed, 0f);
     }
 
     private static void RemovePhysicsComponents(GameObject indicator)
